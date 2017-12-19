@@ -37,3 +37,34 @@ $fish = 'Bass, Carp, Pike, Flounder';
 $fish_list = explode(', ', $fish);
 
 print 'The second fish is ' . $fish_list[1];
+
+$dinner = array('Sweet Corn and Aspargus',
+				'Lemon Chicken',
+				'Brased Bamboo Fungus');
+
+$meal = array(	'break fast' => 'walnut Bun',
+				'lunch' => 'Cashed Nuts and White mushrooms',
+				'snack' => 'Dried Mulberries',
+				'dinner' => 'Eggplant with Chili Sauce');
+
+echo "<br><br>Before Sorting:<br>";
+
+foreach ($dinner as $key => $value) {
+	print " \$dinner: $key $value<br>";
+}
+
+foreach ($meal as $key => $value) {
+	print " \$meal: $key $value<br>";
+}
+
+sort($dinner);
+sort($meal);
+
+print "<br>After Sorting: <br>";
+foreach ($dinner as $key => $value) {
+	print " \$dinner: $key $value<br>";
+}
+
+foreach ($meal as $key => $value) {
+	print " \$meal: $key $value<br>";
+}
