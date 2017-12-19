@@ -25,3 +25,9 @@ echo "<br>";
 unset($meals['Dried Mulberries']); //exclui elemento
 $menu = implode(', ', $meals);
 print $menu;
+
+echo "<br>";
+echo '<tr><td>' . implode('</td><td>', $meals) . '</td></tr>';
+
+echo "<br>";
+echo '<ul><li>' . implode('</li><li>', $meals) . '</li></ul>';
