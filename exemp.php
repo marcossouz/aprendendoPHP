@@ -31,3 +31,9 @@ echo '<tr><td>' . implode('</td><td>', $meals) . '</td></tr>';
 
 echo "<br>";
 echo '<ul><li>' . implode('</li><li>', $meals) . '</li></ul>';
+
+//transformar string em array com explode
+$fish = 'Bass, Carp, Pike, Flounder';
+$fish_list = explode(', ', $fish);
+
+print 'The second fish is ' . $fish_list[1];
