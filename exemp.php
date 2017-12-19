@@ -105,3 +105,18 @@ echo "<br>arsort: <br>";
 foreach ($mealss as $key => $value) {
 	print "  \$meal: $key $value<br>";
 }
+
+echo "<br><br> Arrays Multidimensionais <br><br>";
+
+$meals = array(	'breakfast' => ['Walnut Bun', 'Coffee'],
+				'lunch' => ['Cashed Nuts', 'White Mushrooms'],
+				'snack' => ['Dried Mulberries', 'Salted Sesame Crab']);
+
+$lunches == [ [	'Chicken', 'Eggplant', 'Rice'],
+			  [	'Beef', 'Scallions', 'Noodles'],
+			  [	'Eggplant', 'Tofu'] ];
+
+$flavors = array('Japanese' => array('hot' => 'wasabi',
+									 'salty' => 'soy sauce'),
+				 'Chinese' => array( 'hot' => 'mustard',
+									 'pepper-salty' => 'prickly ash'));
