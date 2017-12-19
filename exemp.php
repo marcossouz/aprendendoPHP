@@ -60,11 +60,48 @@ foreach ($meal as $key => $value) {
 sort($dinner);
 sort($meal);
 
-print "<br>After Sorting: <br>";
+print "<br>After Sorting: sort <br>";
 foreach ($dinner as $key => $value) {
 	print " \$dinner: $key $value<br>";
 }
 
 foreach ($meal as $key => $value) {
 	print " \$meal: $key $value<br>";
+}
+
+echo "<br><br>";
+$meals = array(	'break fast' => 'walnut Bun',
+				'lunch' => 'Cashed Nuts and White mushrooms',
+				'snack' => 'Dried Mulberries',
+				'dinner' => 'Eggplant with Chili Sauce');
+
+echo "Before Sorting: <br>";
+foreach ($meals as $key => $value) {
+	print "  \$meal: $key $value<br>";
+}
+
+echo "<br>After Sorting: asort<br>";
+
+asort($meals); //com asort as chaves permanecem
+//ksort() - se o array for numerico os elementos serao ordenados
+//de tal forma que as chaves ficarao em ordem numerica crescente
+foreach ($meals as $key => $value) {
+	print "  \$meal: $key $value<br>";
+}
+
+echo "<br>Before Sorting: <br>";
+$mealss = array(	'break fast' => 'walnut Bun',
+				'lunch' => 'Cashed Nuts and White mushrooms',
+				'snack' => 'Dried Mulberries',
+				'dinner' => 'Eggplant with Chili Sauce');
+
+foreach ($mealss as $key => $value) {
+	print "  \$meal: $key $value<br>";
+}
+
+arsort($mealss); //ordenacao reversa
+echo "<br>arsort: <br>";
+
+foreach ($mealss as $key => $value) {
+	print "  \$meal: $key $value<br>";
 }
