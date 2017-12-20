@@ -106,13 +106,13 @@ foreach ($mealss as $key => $value) {
 	print "  \$meal: $key $value<br>";
 }
 
-echo "<br><br> Arrays Multidimensionais <br><br>";
+echo "<br> Arrays Multidimensionais <br>";
 
 $meals = array(	'breakfast' => ['Walnut Bun', 'Coffee'],
 				'lunch' => ['Cashed Nuts', 'White Mushrooms'],
 				'snack' => ['Dried Mulberries', 'Salted Sesame Crab']);
 
-$lunches == [ [	'Chicken', 'Eggplant', 'Rice'],
+$lunches = [ [	'Chicken', 'Eggplant', 'Rice'],
 			  [	'Beef', 'Scallions', 'Noodles'],
 			  [	'Eggplant', 'Tofu'] ];
 
@@ -120,3 +120,32 @@ $flavors = array('Japanese' => array('hot' => 'wasabi',
 									 'salty' => 'soy sauce'),
 				 'Chinese' => array( 'hot' => 'mustard',
 									 'pepper-salty' => 'prickly ash'));
+
+
+print "<br>" . $meals['lunch'][1]; //White Mushrooms
+print "<br>" . $meals['snack'][0]; // Dried Mulberries
+print "<br>" . $lunches[0][0]; //chicken
+print "<br>" . $lunches[2][1]; //Tofu
+print "<br>" . $flavors['Japanese']['salty']; //soy sauce
+print "<br>" . $flavors['Chinese']['hot']; //mustard
+
+echo "<br>";
+
+$meal = array(	'breakfast' => 'Walnut Bun',
+				'lunch' => 'Cashed Nuts and White Musheooms',
+				'snack' => 'Dried Mulberries',
+				'dinner' => 'Eggplant with Chili Sauce');
+
+print "<br>Before Sorting: ksort - ordenacao por chave<br><br>";
+
+foreach ($meal as $key => $value) {
+	print "  \$meal: $key $value<br>";
+}
+
+ksort($meal);
+
+print "<br>After Sorting: <br><br>";
+
+foreach ($meal as $key => $value) {
+	print "\$meal: $key $value<br>";
+}
