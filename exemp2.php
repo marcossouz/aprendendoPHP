@@ -13,3 +13,4 @@ foreach ($flavors as $culture => $culture_flavors) {
 	}
 }
 
+echo "<br>";
