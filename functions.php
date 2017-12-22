@@ -1,9 +1,11 @@
 <?php 
 
-$link = 'https://pbs.twimg.com/profile_images/857345239794712588/';
+$link = 'images\\';
 
 function capture_img($src, $alt, $height, $width){
-	$GLOBALS['link'] .= $src;
+	
+	$linkFull = $GLOBALS['link'] . $src;
 
-	echo '<img src="' . $GLOBALS['link'] . '" alt= "' . $alt . '" height="' . $height . '" width="' . $width . '" />';
+	echo '<img src="' . $linkFull . '" alt= "' . $alt . '" height="' . $height . '" width="' . $width . '" />';
 }
+
