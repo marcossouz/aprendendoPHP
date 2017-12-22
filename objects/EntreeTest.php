@@ -3,16 +3,11 @@
 require 'Entree.php';
 
 //Cria uma instancia e a atribui a $soup
-$soup = new Entree;
-//Define as propriedades de $soup
-$soup->name = 'Chicken Soup';
-$soup->ingredients = array('chicken', 'water');
-
+$soup = new Entree('Chicken Soup', array('chicken', 'water'));
 //Cria outra instância e a atribui a $sandwich
-$sandwich = new Entree;
-//Define as propriedades de $sandwich
-$sandwich->name = 'Chicken Sandwich';
-$sandwich->ingredients = array('chicken', 'bread');
+$sandwich = new Entree('Chicken Sandwich', array('chicken', 'bread'));
+
+$sizes = Entree::getSizes();
 
 foreach (['chicken', 'lemon', 'bread', 'water'] as $ing) {
 	if($soup->hasIngredient($ing)) {
