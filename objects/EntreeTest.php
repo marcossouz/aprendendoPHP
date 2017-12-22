@@ -34,5 +34,7 @@ try{
 $combo = new ComboMeal('Soup + Sandwich', array($soup, $sandwich));
 
 foreach (['chicken', 'water', 'pickles'] as $ing) {
-	print 'Somenting in the combo contains ' . $ing . "<br>";
+	if($combo->hasIngredient($ing)){
+		print 'Somenting in the combo contains ' . $ing . "<br>";
+	}
 }
