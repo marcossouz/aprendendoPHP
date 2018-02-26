@@ -3,11 +3,13 @@
 //com o método solicitado
 if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
-	if(validate_form())
+	//se validate_form() retornar erros, 
+	//eles serao passados para show_form()
+	if($form_errors = validate_form())
 	{
-		process_form();
+		show_form($form_errors);
 	} else {
-		show_form();
+		process_form();
 	}
 } else {
 	show_form();
@@ -20,8 +22,14 @@ function process_form()
 }
 
 //Exibe o formulário
-function show_form()
+function show_form($errors = null)
 {
+	if($errors){
+		print 'Please correct these errors: <ul><li>';
+		print implode('</li><li>', $errors);
+		print '</li></ul>';
+	}
+
 	print <<<_HTML_
 	<form method="POST" action="$_SERVER[PHP_SELF]">
 		Your name: <input type:"text" name="my_name">
@@ -34,11 +42,16 @@ _HTML_;
 //valida os dados do formulario
 function validate_form()
 {
+		//começa com um array de mensagens de erro vazia
+		$errors = array();
+
+	//Adiciona uma mensagem de erro se o nome for muito curto
 	//my_name tem que ter pelo menos 3 caracteres
 	if(strlen($_POST['my_name']) < 3)
 	{
-		return false;
-	} else {
-		return true;
+		$errors[ ] = 'Your name must be at least 3 letters long.';
+		return $errors;
 	}
+	//retorna o (possivelmente vazio) array de erro
+	return $errors;
 }
